@@ -24,6 +24,7 @@ def receive_posture():
 @app.route('/log', methods=['GET'])
 def get_log():
     return jsonify(posture_log)
+# I use AI to generate the frontend code especially the css.
 
 @app.route('/')
 def dashboard():

@@ -5,8 +5,9 @@ import time
 import numpy as np
 import tensorflow as tf
 import pickle
-
-RPI_URL = "http://172.20.10.7:5000/posture"
+import sys
+RPI_IP = sys.argv[1] if len(sys.argv) > 1 else "172.20.10.7"
+RPI_URL = "http://" + RPI_IP + ":5000/posture"
 
 model = tf.keras.models.load_model('posture_model.h5')
 with open('scaler.pkl', 'rb') as f:
@@ -21,7 +22,7 @@ options = PoseLandmarkerOptions(
     base_options=BaseOptions(model_asset_path='pose_landmarker.task'),
     running_mode=VisionRunningMode.IMAGE
 )
-
+#I ask claude for generate the MediaPipe pose landmarker and how to use it to collect data
 cap = cv2.VideoCapture(0)
 last_send = 0
 

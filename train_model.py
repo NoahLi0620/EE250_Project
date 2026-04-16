@@ -27,7 +27,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dropout(0.3),
     tf.keras.layers.Dense(1, activation='sigmoid')
 ])
-
+# in train_model I use AI to think and generate the code for using 1D CNN and how many kernels should I use.
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.summary()
 
